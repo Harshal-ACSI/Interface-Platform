@@ -26,6 +26,9 @@ def Main():
     text1 = font1.render(Name, True, AccentColour)
     textRect1 = text1.get_rect() 
     textRect1.center = (50, 20)
+    text2 = font1.render("GUI Console", True, AccentColour)
+    textRect2 = text2.get_rect() 
+    textRect2.center = (50, 20)
     running = True
     Communicator_File = open(r"Accessories/Texts/Communicator.txt","w")
     Communicator_File.write("$tartUp Complete")
@@ -45,6 +48,9 @@ def Main():
         pygame.draw.rect(screen, (0,0,0), pygame.Rect(0, 0, x-80, 40),0,7,0,7,0)
         textRect1.center = (50, 20)
         screen.blit(text1, textRect1)
+        textRect2 = text2.get_rect() 
+        textRect2.center = (x/2, y/2)
+        screen.blit(text2, textRect2)
 
         if mouse_x > x-40 and mouse_y < 40:
             screen.blit(HClose, (x-40, 0))
